@@ -1,0 +1,65 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px; /* Ajuste a margem superior para mover o container para cima */
+}
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  max-width: 600px;
+  text-align: center;
+}
+footer {
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+header {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: -50px; /* Ajuste a margem inferior para mover o logo para cima */
+}
+header img {
+  max-width: 100px;
+  height: auto;
+}
+/* Botão moderno */
+button {
+  background-color: #007BFF; /* Azul moderno */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+  background-color: #0056b3; /* Azul mais escuro no hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+/* Input arquivo */
+input[type="file"] {
+  font-size: 1em;
+  margin-top: 10px;
+}

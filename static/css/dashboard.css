@@ -1,0 +1,51 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e7e7e7;
+    width: 100%;
+}
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar .nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+.dashboard-grid {
+    padding: 10px;
+}
+/* Botão moderno */
+button {
+    background-color: #007BFF; /* Azul moderno */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+footer {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}

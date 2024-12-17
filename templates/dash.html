@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="big-plot" id="chart1"></div>
+    <div class="small-plots">
+        <div class="small-plot" id="chart2"></div>
+        <div class="small-plot" id="chart3"></div>
+        <div class="small-plot" id="chart4"></div>
+    </div>
+</div>
+<style>dashboard.css</style>
+<script>
+    var graphJSON1 = {{ graph1 | safe }};
+    var graphJSON2 = {{ graph2 | safe }};
+    var graphJSON3 = {{ graph3 | safe }};
+    var graphJSON4 = {{ graph4 | safe }};
+    
+    var layout1 = graphJSON1.layout;
+    var layout2 = graphJSON2.layout;
+    var layout3 = graphJSON3.layout;
+    var layout4 = graphJSON4.layout;
+
+    Plotly.react('chart1', graphJSON1.data, layout1);
+    Plotly.react('chart2', graphJSON2.data, layout2);
+    Plotly.react('chart3', graphJSON3.data, layout3);
+    Plotly.react('chart4', graphJSON4.data, layout4);
+</script>
