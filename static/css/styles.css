@@ -14,19 +14,26 @@ main {
   margin-top: -50px; /* Ajuste a margem superior para mover o container para cima */
 }
 .container {
+  font-family: "Poppins", serif;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
   width: 50%;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   text-align: center;
+  margin: 100px auto; /* Center the container and add top margin */
 }
 footer {
+  font-family: "Poppins", serif;
   text-align: center;
   background-color: white;
   padding: 10px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 header {
   text-align: center;
@@ -39,18 +46,31 @@ header img {
 }
 /* Botão moderno */
 button {
-  background-color: #007BFF; /* Azul moderno */
-  color: white;
+  font-family: "Poppins", serif;
+  background-color: white; /* Branco */
+  color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 1.2em;
+  font-weight: bold; /* Make text bold */
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.button_highlighted {
+  font-family: "Poppins", serif;
+  background-color: #007bff; /* Azul moderno */
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: bold; /* Make text bold */
+  border-radius: 5px;
+  cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 button:hover {
-  background-color: #0056b3; /* Azul mais escuro no hover */
+  background-color: #007bff; /* Azul mais escuro no hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }

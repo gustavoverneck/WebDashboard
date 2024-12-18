@@ -3,28 +3,42 @@
 {% include 'head.html' %}
 <head>
     <title>Web Dashboard</title>
-    <link rel="icon" href="/static/logo.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css">
 </head>
-<body>
-    <header>
-        <img src="/static/logo.png" alt="Blu Consultoria">
-    </header>
+    <body>
+        {% include 'cabecalho.html' %}
 
-    <main>
+        </div>
         <div class="container">
-            <h2 style="font-size: 2em;">Dashboard Web</h2>
+            <h2 style="font-size: 2em;">Web Dashboard</h2>
             <p style="font-size: 1.2em;">Para ter acesso ao dashboard, por favor insira o arquivo (planilha).</p>
-            <form action="/submit" method="post" enctype="multipart/form-data">
-                <input type="file" id="file" name="file" accept=".csv, .xlsx" required>
+            <form action="/submit" method="post" enctype="multipart/form-data" style="text-align: center; margin-top: 20px;">
+                <label for="file" id="file-label" style="display: inline-block; background-color: white; color: black; 
+                        border: 1px solid #ccc; padding: 8px 12px; border-radius: 5px; cursor: pointer;">
+                    Escolher arquivo
+                </label>
+                <input type="file" id="file" name="file" accept=".csv, .xlsx" required style="display: none;" onchange="updateFileName()">
+                <span id="file-name" style="margin-left: 10px;"></span>
+
+                <script>
+                    function updateFileName() {
+                        const input = document.getElementById('file');
+                        const label = document.getElementById('file-label');
+                        const fileNameSpan = document.getElementById('file-name');
+                        if (input.files.length > 0) {
+                            fileNameSpan.textContent = input.files[0].name;
+                        } else {
+                            fileNameSpan.textContent = '';
+                        }
+                    }
+                </script>
                 <br><br>
-                <button type="submit">Acessar</button>
+                <button type="submit" style="padding: 10px 20px; background-color: #0056b3; color: white; 
+                        border: none; border-radius: 5px; font-size: 1em; cursor: pointer;">
+                    Acessar
+                </button>
             </form>
         </div>
-    </main>
+    </body>
 
-    <footer>
-        <p style="font-size: 1em;">&copy; 2024. Gustavo A. Verneck & Guilherme de Melo. Todos os direitos reservados.</p>
-    </footer>
-</body>
+    {% include 'footer.html' %}
 </html>

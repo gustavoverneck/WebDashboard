@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include 'head.html' %}
-<head>
-    <title>Sobre o Web Dashboard</title>
-</head>
-<body>
-    <header>
-        <h1>Sobre o Web Dashboard</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Overview</h2>
-            <p>This is a generic HTML template for a web dashboard.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Web Dashboard. All rights reserved.</p>
-    </footer>
-</body>
+    {% include 'head.html' %}
+    <head>
+        <title>Sobre o Web Dashboard</title>
+    </head>
+    <body>
+        {% include 'cabecalho.html' %}
+        
+        <header>
+            <h1>Sobre o Web Dashboard</h1>
+        </header>
+        
+        <main>
+            <section>
+                <h2>Overview</h2>
+                <p>This is a generic HTML template for a web dashboard.</p>
+            </section>
+        </main>
+        {% include 'footer.html' %}
+    </body>
 </html>

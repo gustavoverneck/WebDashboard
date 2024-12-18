@@ -15,9 +15,13 @@ main = Blueprint('main', __name__)
 def index():
     return render_template('index.html')
 
-@main.route('/sobre')
+@main.route('/sobre', methods=['GET'])
 def sobre():
     return render_template('sobre.html')
+
+@main.route('/contato', methods=['GET'])
+def contato():
+    return render_template('contato.html')
 
 @main.route('/submit', methods=['POST'])
 def submit():

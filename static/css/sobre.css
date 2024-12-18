@@ -24,15 +24,17 @@ body, html {
     text-align: center;
     margin: 100px auto; /* Center the container and add top margin */
   }
-footer {
+  footer {
     font-family: "Poppins", serif;
     text-align: center;
     background-color: white;
     padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     width: 100%;
     position: fixed;
     bottom: 0;
-}
+    left: 0;
+  }
   header {
     text-align: center;
     padding: 20px;
@@ -81,13 +83,3 @@ footer {
     font-size: 1em;
     margin-top: 10px;
   }
-
-.dashboard {
-    font-family: "Poppins", serif;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    padding: 0px;
-    justify-content: center;
-    align-items: center;
-}
