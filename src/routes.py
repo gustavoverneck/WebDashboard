@@ -41,7 +41,6 @@ def dashboard():
         return "Nenhum dado disponível. Faça o upload do arquivo primeiro!", 400
 
     graphs = sendDashboardPlots(df)
-
     return graphs
 
 @main.route('/submit_contact', methods=['POST'])

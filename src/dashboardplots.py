@@ -2,12 +2,18 @@
 
 import os
 from flask import Blueprint, render_template, request, redirect, url_for
+import sys
 import pandas as pd
 import plotly.express as px
 from plotly.utils import PlotlyJSONEncoder
 from PIL import Image
 import plotly.graph_objects as go
 
+def get_current_dir():
+    return os.getcwd()
+
+def get_previous_dir():
+    return os.path.dirname(os.getcwd())
 
 def convert_to_json(fig):
         return fig.to_json()
@@ -44,7 +50,6 @@ def sendDashboardPlots(df):
     ########################################################
     # Adicionar gráficos personalizados
     MESES = df.columns[0]
-    print(df[df.columns[1]])
     df[df.columns[1]] = df[df.columns[1]].astype(float) # SP 2022 - 1
     df[df.columns[2]] = df[df.columns[2]].astype(float) # SP 2023 - 2
     df[df.columns[3]] = df[df.columns[3]].astype(float) # ES 2022 - 3
@@ -132,10 +137,14 @@ def sendDashboardPlots(df):
     # Gráfico 3 com logo da Blu
     fig_logo = go.Figure()
 
-    # Adicionar imagem ao gráfico
+    if getattr(sys, 'frozen', False):
+        image_path = os.path.join(sys._MEIPASS, 'static', 'Blu.png')
+    else:
+        image_path = os.path.join(get_current_dir(), 'static', 'Blu.png')
+
     fig_logo.add_layout_image(
         dict(
-            source=Image.open('static/Blu.png'),
+            source=Image.open(image_path),
             xref="paper", yref="paper",
             x=0.5, y=0.7,
             sizex=0.7, sizey=0.7,
