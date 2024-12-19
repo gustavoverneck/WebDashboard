@@ -9,6 +9,12 @@ from plotly.utils import PlotlyJSONEncoder
 from PIL import Image
 import plotly.graph_objects as go
 
+# COLORS
+DEFAULT_BG_COLOR = '#181818'
+DEFAULT_TEXT_COLOR = '#FFFFFF'
+
+
+
 def get_current_dir():
     return os.getcwd()
 
@@ -112,7 +118,9 @@ def sendDashboardPlots(df):
         title="<b>Faturamento Mensal por Ano</b>",
         xaxis_title="Mês",
         yaxis_title="Faturamento (R$)",
-        template="plotly",
+        template="plotly_dark",
+        paper_bgcolor=DEFAULT_BG_COLOR,  # Define o fundo como preto
+        plot_bgcolor=DEFAULT_BG_COLOR    # Define o fundo do gráfico como preto
     )
 
 # Gráfico Faturamento anual por estado
@@ -130,7 +138,9 @@ def sendDashboardPlots(df):
         xaxis_title="Estado",
         yaxis_title="Orçamento Anual (R$)",
         barmode='group',
-        template="plotly",
+        template="plotly_dark",
+        paper_bgcolor=DEFAULT_BG_COLOR,  # Define o fundo como preto
+        plot_bgcolor=DEFAULT_BG_COLOR    # Define o fundo do gráfico como preto
     )
 
 
@@ -155,9 +165,9 @@ def sendDashboardPlots(df):
     fig_logo.update_layout(
         xaxis=dict(visible=False),
         yaxis=dict(visible=False),
-        template="plotly",
-        paper_bgcolor='white',  # Define o fundo como branco
-        plot_bgcolor='white'    # Define o fundo do gráfico como branco
+        template="plotly_dark",
+        paper_bgcolor=DEFAULT_BG_COLOR,  # Define o fundo como preto
+        plot_bgcolor=DEFAULT_BG_COLOR    # Define o fundo do gráfico como preto
     )
 
 
@@ -188,7 +198,9 @@ def sendDashboardPlots(df):
     fig_total.update_layout(
         title="<b>Faturamento Anual Total (em reais)</b>",
         grid={'rows': 1, 'columns': 3, 'pattern': "independent"},
-        template="plotly"
+        template="plotly_dark",
+        paper_bgcolor=DEFAULT_BG_COLOR,  # Define o fundo como preto
+        plot_bgcolor=DEFAULT_BG_COLOR    # Define o fundo do gráfico como preto
     )
 
 # Configuração do layout
